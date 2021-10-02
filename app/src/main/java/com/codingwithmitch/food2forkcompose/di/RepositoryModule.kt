@@ -1,9 +1,9 @@
 package com.codingwithmitch.food2forkcompose.di
 
-import com.codingwithmitch.food2fork.network.RecipeService
+import com.codingwithmitch.food2forkcompose.network.RecipeService
 import com.codingwithmitch.food2forkcompose.network.model.RecipeDtoMapper
 import com.codingwithmitch.food2forkcompose.repository.RecipeRepository
-import com.codingwithmitch.food2forkcompose.repository.RecipeRepository_Impl
+import com.codingwithmitch.food2forkcompose.repository.RecipeRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,7 +20,7 @@ object RepositoryModule {
         recipeService: RecipeService,
         recipeMapper: RecipeDtoMapper,
     ): RecipeRepository {
-        return RecipeRepository_Impl(
+        return RecipeRepositoryImpl(
             recipeService = recipeService,
             mapper = recipeMapper
         )
